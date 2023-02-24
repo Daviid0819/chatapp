@@ -1,0 +1,24 @@
+.rooms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.rooms p {
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.rooms > .buttons {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.rooms button {
+    position: relative;
+    margin: 0 20px 0 20px;
+    padding: 15px;
+}

@@ -1,0 +1,75 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    color: rgb(102, 208, 250);
+    padding: 30px;
+    margin-top: 50px;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.12);
+    z-index: 1;
+}
+
+.card::before, .card::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    transition: 0.5s ease-in-out;
+}
+
+.card::before {
+    top: -5px;
+    left: -5px;
+    border-top: 2px solid rgb(102, 208, 250);
+    border-left: 2px solid rgb(102, 208, 250);
+    border-radius: 5px;
+}
+
+.card::after {
+    right: -5px;
+    bottom: -5px;
+    border-bottom: 2px solid rgb(102, 208, 250);
+    border-right: 2px solid rgb(102, 208, 250);
+    border-radius: 5px;
+}
+
+.card:hover::before, .card:hover::after {
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+}
+
+.field {
+    color: rgb(103, 104, 109);
+    background-color: rgb(35, 36, 40);
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgb(102, 208, 250);
+    z-index: 1;
+}
+
+.field:focus {
+    outline: none;
+}
+
+.error {
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.12);
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.btn {
+    border: none;
+    color: black;
+    font-weight: 600;
+    background-color: rgb(102, 208, 250);
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    z-index: 1;
+}
