@@ -1,21 +1,16 @@
-ChatApp
+# React Chat Application
 
-Frontend:
-    - Pages
-        - Enter a username
-        - Choose room (password) / Create room
-            - Room structure
-                - Roomname
-                - Users
-                - Messages
-        - Chat -> 50 messages, text input, user list
-        - Leave room -> go back to choose room / create room
+## 2023. 05. 06.
+- Real-time data (Socket.io)
+- Room page
+    - Users can enter or create rooms
+    - Real-time chat and room information (user list)
+    - Ranks: boss can kick other users
+- Error messages
 
-Backend:
-    -Rooms
-        -Create, delete, enter, leave
-
-
-HA CSAK EGY EMBER VAN BENT A SZOBABAN TOROLJE A SZOBAT
-USEREK SORBA RENDEZESE A LISTAN ILLETVE FORMAZASA
-REAL-TIME UPDATE (USER LIST)
+## 2023. 02. 24.
+- Login page (enter username)
+- Rooms page
+    - Enter or create room
+- Room page
+    - Under dev

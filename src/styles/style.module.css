@@ -1,10 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;600&display=swap');
+
+body {
+    font-family: 'Saira Condensed';
+}
+
 .card {
     display: flex;
     flex-direction: column;
     position: relative;
+
     color: rgb(102, 208, 250);
+    font-size: 16px;
+
     padding: 30px;
     margin-top: 50px;
+
     box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.12);
     z-index: 1;
 }
@@ -39,11 +49,16 @@
 }
 
 .field {
-    color: rgb(103, 104, 109);
+    color: rgb(102, 208, 250);
+    font-family: 'Saira Condensed';
+    font-size: 18px;
+
     background-color: rgb(35, 36, 40);
     height: 30px;
+
     border: none;
     border-radius: 3px;
+
     margin-bottom: 30px;
     border-bottom: 1px solid rgb(102, 208, 250);
     z-index: 1;
@@ -53,23 +68,23 @@
     outline: none;
 }
 
-.error {
-    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.12);
-    margin-bottom: 30px;
-    text-align: center;
-    padding: 10px;
-    font-size: 14px;
-    font-weight: 600;
-}
-
 .btn {
-    border: none;
     color: black;
+    font-family: 'Saira Condensed';
+    font-size: 18px;
     font-weight: 600;
+
     background-color: rgb(102, 208, 250);
-    padding: 10px;
-    border-radius: 4px;
     box-shadow: 2px 2px rgba(0, 0, 0, 0.12);
+
+    border: 1px solid transparent;
+    border-radius: 4px;
+
+    padding: 10px;
     cursor: pointer;
     z-index: 1;
+}
+
+.btn:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0);
 }

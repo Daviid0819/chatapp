@@ -1,0 +1,45 @@
+.msg {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.msg_text {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+
+    width: fit-content;
+    max-width: 400px;
+    word-break: break-all;
+    max-width: 400px;
+    padding: 8px;
+    box-sizing: border-box;
+
+    background-color: rgb(102, 208, 250);
+    color: #000000;
+    font-size: 20px;
+
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.12);
+}
+
+.msg_text_self {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+
+    width: fit-content;
+    max-width: 400px;
+    word-break: break-all;
+    padding: 8px;
+    margin-left: auto;
+    box-sizing: border-box;
+
+    background-color: rgb(35, 36, 40);
+    color: rgb(102, 208, 250);
+    font-size: 20px;
+
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.12);
+}

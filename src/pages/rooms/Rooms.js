@@ -6,11 +6,12 @@ import { DataContext } from "../../context/DataContext";
 import RoomsStyle from "./Rooms.module.css";
 import Style from "../../styles/style.module.css";
 
+import ErrorMsg from "../../components/errormsg/ErrorMsg";
+
 const Rooms = () => {
     const [roomname, setRoomname] = useState("");
-    const [err, setErr] = useState("");
 
-    const {name, setUserRoom} = useContext(DataContext);
+    const {name, setUserRoom, err, setErr} = useContext(DataContext);
 
     const navigate = useNavigate();
 
@@ -38,7 +39,7 @@ const Rooms = () => {
             return setErr(data.message);
         }
 
-        setUserRoom(data.room);
+        setUserRoom(data.room.name);
         navigate("/room");
     };
 
@@ -60,17 +61,18 @@ const Rooms = () => {
             return setErr(data.message);
         }
 
-        setUserRoom(data.room);
+        setUserRoom(data.room.name);
         navigate("/room");
+    };
+
+    const handleBack = () => {
+        setErr("");
+        navigate("/");
     };
 
     const handleError = () => {
         if(err !== ""){
-            return (
-                <div className={Style.error}>
-                    <span>{err}</span>
-                </div>
-            );
+            return <ErrorMsg />
         }
     };
 
@@ -84,12 +86,17 @@ const Rooms = () => {
                     placeholder="Room name"
                     value={roomname}
                     onChange={(e) => setRoomname(e.target.value)}
+                    onKeyDown={(e) => {
+                        if(e.key === "Enter"){
+                            handleEnter();
+                        } 
+                    }}
                 />
                 {handleError()}
                 <div className={RoomsStyle.buttons}>
                     <button
                         className={Style.btn}
-                        onClick={() => navigate("/")}
+                        onClick={handleBack}
                     >
                         Back
                     </button>

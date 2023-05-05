@@ -8,7 +8,20 @@ const userSchema = new mongoose.Schema({
     }
 });
 
+const bossSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        minlength: 3,
+        required: true
+    }
+});
+
 const messageSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        minlength: 3,
+        required: true
+    },
     text: {
         type: String,
         required: true
@@ -28,6 +41,7 @@ const roomsSchema = new mongoose.Schema({
     },
     users: [userSchema],
     messages: [messageSchema],
+    boss: [bossSchema],
     date: {
         type: Date,
         default: Date.now

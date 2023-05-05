@@ -16,23 +16,24 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    font-weight: 600;
     padding: 20px;
+}
+
+.roomname span {
+    font-size: 25px;
+    font-weight: 600;
 }
 
 .users {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 20px;
+
+    padding: 15px 25px;
+    box-sizing: border-box;
+
     box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.12);
     clip-path: inset(-15px 0px -15px 0px);
-}
-
-.user {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .chatwindow {
@@ -43,12 +44,41 @@
 
 .chat {
     display: flex;
+    flex-direction: column;
     height: 80vh;
+    padding: 16px;
+    gap: 16px;
+    overflow-y: auto;
 }
 
 .message {
     display: flex;
+    flex-direction: row;
     height: 20vh;
     box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.12);
     clip-path: inset(-15px 0px 0px 0px);
+}
+
+.message textarea {
+    resize: none;
+    outline: none;
+    border: none;
+
+    width: 80%;
+    background-color: rgb(35, 36, 40);
+
+    color: rgb(102, 208, 250);
+    font-family: 'Saira Condensed';
+    font-size: 18px;
+}
+
+.message textarea:focus {
+    outline: none;
+    border: none;
+}
+
+.message button {
+    width: 20%;
+    font-size: 25px !important;
+    border-radius: 0px !important;
 }

@@ -6,9 +6,10 @@ import { DataContext } from "../../context/DataContext";
 import LoginStyle from "./Login.module.css";
 import Style from "../../styles/style.module.css";
 
+import ErrorMsg from "../../components/errormsg/ErrorMsg";
+
 const Login = () => {
-    const {name, setName} = useContext(DataContext);
-    const [err, setErr] = useState("");
+    const {name, setName, err, setErr} = useContext(DataContext);
 
     const navigate = useNavigate();
 
@@ -21,16 +22,13 @@ const Login = () => {
             return setErr("The username must be at least 3 characters");
         }
 
+        setErr("");
         navigate("/rooms");
     };
 
     const handleError = () => {
         if(err !== ""){
-            return (
-                <div className={Style.error}>
-                    <span>{err}</span>
-                </div>
-            );
+            return <ErrorMsg />
         }
     };
 
@@ -44,7 +42,11 @@ const Login = () => {
                     placeholder="Username"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    required
+                    onKeyDown={(e) => {
+                        if(e.key === "Enter"){
+                            handleSubmit();
+                        }
+                    }}
                 />
                 {handleError()}
                 <button

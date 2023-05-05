@@ -4,13 +4,17 @@ export const DataContext = createContext();
 
 export const StateProvider = ({ children }) => {
     const [name, setName] = useState("");
-    const [userRoom, setUserRoom] = useState({});
+    const [userRoom, setUserRoom] = useState("");
+
+    const [err, setErr] = useState("");
 
     const value = {
         name,
         setName,
         userRoom,
-        setUserRoom
+        setUserRoom,
+        err,
+        setErr
     };
 
     return (
